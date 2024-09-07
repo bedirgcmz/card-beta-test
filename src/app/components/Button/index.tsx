@@ -1,11 +1,15 @@
 "use client";
-const MyButton = () => {
-  const handleClick = () => {
-    console.log("add cards");
-  };
+
+type MyButtonProps = {
+  onClick: () => void;
+};
+
+const MyButton = ({ onClick }: MyButtonProps) => {
   return (
     <div className="flex justify-center p-3 bg-blue-700 w-[150px] mx-auto">
-      <button onClick={handleClick}>Add Cards</button>
+      <button onClick={onClick} className="text-white">
+        Add Cards
+      </button>
     </div>
   );
 };

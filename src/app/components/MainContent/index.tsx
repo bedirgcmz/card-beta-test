@@ -2,6 +2,7 @@
 import { useState } from "react";
 import MyButton from "../Button";
 import MyCard from "../Card";
+import CardForm from "../CardForm";
 
 const MainContent = () => {
   const initialCards = [
@@ -36,9 +37,26 @@ const MainContent = () => {
   ];
 
   const [cards, setCards] = useState(initialCards);
+  const [isFormShown, setIsFormShown] = useState(false);
+  const [imageCounter, setImageCounter] = useState(5);
 
   const removeCard = (id: number) => {
     setCards((prevCards) => prevCards.filter((card) => card.id !== id));
+  };
+
+  const addCard = (card: {
+    project: string;
+    link: string;
+    tech: string;
+    image: string;
+  }) => {
+    const newCard = {
+      ...card,
+      id: cards.length + 1,
+      image: `https://picsum.photos/200/300?random=${imageCounter}`,
+    };
+    setCards((prevCards) => [...prevCards, newCard]);
+    setImageCounter((prevCounter) => prevCounter + 1);
   };
 
   return (
@@ -52,7 +70,11 @@ const MainContent = () => {
           />
         ))}
       </div>
-      <MyButton />
+      <MyButton onClick={() => setIsFormShown(true)} />{" "}
+      {/* Show form on button click */}
+      {isFormShown && (
+        <CardForm onAddCard={addCard} onClose={() => setIsFormShown(false)} />
+      )}
     </div>
   );
 };
