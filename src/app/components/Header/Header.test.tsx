@@ -24,4 +24,11 @@ describe("Header Component", () => {
     expect(aboutItem).toBeInTheDocument();
     expect(contactItem).toBeInTheDocument();
   });
+
+  test("Navbar listitems length to be exactly 3 and not less or more", () => {
+    render(<Header />);
+    const allListItems = screen.getAllByRole("listitem");
+    expect(allListItems).not.toHaveLength(5);
+    expect(allListItems).toHaveLength(3);
+  });
 });
