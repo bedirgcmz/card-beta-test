@@ -70,7 +70,7 @@ const MainContent = () => {
           />
         ))}
       </div>
-      <MyButton onClick={() => setIsFormShown(true)} />{" "}
+      <MyButton onClick={() => setIsFormShown(true)} />
       {/* Show form on button click */}
       {isFormShown && (
         <CardForm onAddCard={addCard} onClose={() => setIsFormShown(false)} />
