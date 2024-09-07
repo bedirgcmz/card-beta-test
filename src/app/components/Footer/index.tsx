@@ -10,7 +10,7 @@ const MyFooter: React.FC<MyFooterProps> = ({ navLinks, socialLinks }) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className=" flex flex-col justify-center items-center bg-gray-800 text-white p-4">
+    <div className="flex flex-col justify-center items-center bg-gray-800 text-white p-4">
       <p className="italic">Copyright Edwin Andermyr {currentYear}</p>
 
       <nav className="mt-4">
@@ -33,9 +33,11 @@ const MyFooter: React.FC<MyFooterProps> = ({ navLinks, socialLinks }) => {
             aria-label={link.name}
             className="text-white hover:text-gray-400"
           >
-            {link.name === "Instagram" && <FaInstagram />}
-            {link.name === "Github" && <FaGithub />}
-            {link.name === "Twitter" && <FaTwitter />}
+            {link.name === "Instagram" && (
+              <FaInstagram data-testid="social-icon" />
+            )}
+            {link.name === "Github" && <FaGithub data-testid="social-icon" />}
+            {link.name === "Twitter" && <FaTwitter data-testid="social-icon" />}
           </a>
         ))}
       </div>
