@@ -5,13 +5,19 @@ import "@testing-library/jest-dom";
 describe("Header Component", () => {
   test("Renders the Page title", () => {
     render(<Header />);
-    const HeaderTitle = screen.getByRole("heading", { name: "Card-Beta-Test" });
+    const HeaderTitle = screen.getByRole("heading", {
+      level: 1,
+      name: "Card-Beta-Test",
+    });
     expect(HeaderTitle).toBeInTheDocument();
   });
 
   test("Render the Subtitle correctly", () => {
     render(<Header />);
-    const HeaderSubtitle = screen.getByText("Create Cards Easily");
+    const HeaderSubtitle = screen.getByRole("heading", {
+      level: 3,
+      name: "Create Cards Easily",
+    });
     expect(HeaderSubtitle).toBeInTheDocument();
   });
 
