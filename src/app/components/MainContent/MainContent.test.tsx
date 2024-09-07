@@ -51,7 +51,6 @@ describe("MainContent Component", () => {
     expect(screen.queryByPlaceholderText("Project Name")).toBeNull(); // Form not present yet
 
     fireEvent.click(screen.getByText("Add Cards"));
-
     expect(screen.getByPlaceholderText("Project Name")).toBeInTheDocument(); // Form is successfully shown
   });
 
@@ -86,7 +85,6 @@ describe("MainContent Component", () => {
     });
 
     fireEvent.click(screen.getByText("Add Card"));
-
     expect(screen.getByText("My New Project")).toBeInTheDocument();
   });
 
