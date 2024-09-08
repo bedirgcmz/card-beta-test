@@ -1,7 +1,8 @@
 ## Important Links
 
 Miro Board -> https://miro.com/app/board/uXjVKj9igWM=/?share_link_id=668279363875
-Github -> https://github.com/hasuwini77/card-beta-test
+Github -> https://github.com/hasuwini77/assignment-card-beta_test
+PowerPoint -> https://docs.google.com/presentation/d/1B1rWQ84h9DJw8dpFTGm-8WNKGZ-nN0O8/edit?usp=sharing&ouid=108288167018774962359&rtpof=true&sd=true
 
 ## Main Idea
 
@@ -22,7 +23,7 @@ a form will appear will the following
 Required Fields:
 
 - Name of project
-- Thumbnail Image (auto generated)
+- Thumbnail Image (auto generated) // Field ignored in our example
 - URL (link of project)
 - Tech Stack (list of tech used)
 
@@ -48,7 +49,9 @@ COMPONENTS:
 
   - Card
   - Button
+  - CardForm (hidden first)
 
 - Footer
-  - paragraph
+  - Copyright paragraph with dynamic year date
+  - 3 nav links
   - Social Icons links
