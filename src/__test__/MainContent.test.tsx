@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import MainContent from ".";
+import MainContent from "../components/MainContent";
 import "@testing-library/jest-dom";
 
 describe("MainContent Component", () => {

@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import CardForm from ".";
+import CardForm from "../components/CardForm";
 
 describe("CardForm Component", () => {
   const mockOnAddCard = jest.fn();
@@ -48,11 +48,18 @@ describe("CardForm Component", () => {
 
     fireEvent.submit(screen.getByTestId("card-form"));
 
+    // expect(mockOnAddCard).toHaveBeenCalledWith({
+    //   project: "New Project",
+    //   link: "https://example.com",
+    //   tech: "React, TypeScript",
+    //   image: "", // Placeholder value
+    // });
+
+    //This added by Bedir instead of ups comment lines
     expect(mockOnAddCard).toHaveBeenCalledWith({
-      project: "New Project",
-      link: "https://example.com",
-      tech: "React, TypeScript",
-      image: "", // Placeholder value
+      projectName: "New Project",
+      projectLink: "https://example.com",
+      technologies: "React, TypeScript",
     });
     expect(mockOnAddCard).toHaveBeenCalledTimes(1);
   });

@@ -1,3 +1,12 @@
-export default function Home() {
-  return <main className="bg-gray-800">Good luck Boss!</main>;
-}
+import CardForm from "@/components/CardForm";
+import MainContent from "@/components/MainContent";
+
+const Home = () => {
+  return (
+    <main className="">
+      <MainContent />
+    </main>
+  );
+};
+
+export default Home;

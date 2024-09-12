@@ -1,12 +1,12 @@
 import { render, screen } from "@testing-library/react";
-import MyFooter from ".";
+import Footer from "../components/Footer";
 
 describe("Footer Component", () => {
   const navLinks: { name: string; href: string }[] = [];
   const socialLinks: { name: string; href: string }[] = [];
 
   test("Includes Copyright in a paragraph", () => {
-    render(<MyFooter navLinks={navLinks} socialLinks={socialLinks} />);
+    render(<Footer navLinks={navLinks} socialLinks={socialLinks} />);
     expect(screen.getByText(/Copyright Edwin Andermyr/i)).toBeInTheDocument();
   });
 
@@ -18,7 +18,7 @@ describe("Footer Component", () => {
     ];
     const socialLinks: { name: string; href: string }[] = [];
 
-    render(<MyFooter navLinks={navLinks} socialLinks={socialLinks} />);
+    render(<Footer navLinks={navLinks} socialLinks={socialLinks} />);
     const listItems = screen.getAllByRole("listitem");
     expect(listItems.length).toBe(3);
   });
@@ -31,7 +31,7 @@ describe("Footer Component", () => {
       { name: "Twitter", href: "#" },
     ];
 
-    render(<MyFooter navLinks={navLinks} socialLinks={socialLinks} />);
+    render(<Footer navLinks={navLinks} socialLinks={socialLinks} />);
     const icons = screen.getAllByTestId("social-icon");
     expect(icons.length).toBe(3);
   });

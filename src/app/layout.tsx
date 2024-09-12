@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,9 +14,26 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const footerDate = {
+    navLinks: [
+      { name: "Home", href: "/" },
+      { name: "About", href: "about" },
+      { name: "Contact Us", href: "contact" },
+    ],
+    socialLinks: [
+      { name: "Instagram", href: "www.google.com" },
+      { name: "Github", href: "www.google.com" },
+      { name: "Twitter", href: "www.google.com" },
+    ],
+  };
+
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className="text-white  bg-[#023047] flex flex-col justify-start min-h-screen">
+        <Header />
+        {children}
+        <Footer navLinks={footerDate.navLinks} socialLinks={footerDate.socialLinks} />
+      </body>
     </html>
   );
 }
