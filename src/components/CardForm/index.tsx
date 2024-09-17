@@ -23,11 +23,11 @@ const CardForm: React.FC<CardFormProps> = ({ onAddCard, onClose }) => {
       <form
         data-testid="card-form"
         onSubmit={handleSubmit}
-        className="flex flex-col justify-between items-start w-[300px] h-[250px] bg-white rounded text-[#023047] p-2"
+        className="flex flex-col justify-between items-start w-[300px] h-[250px] bg-[#0003be] rounded text-[#fff] p-2"
       >
         <h2 className="text-center w-[100%] mb-2">Add New Card</h2>
         <input
-          className="border-2 px-2 py-1 rounded-md w-[100%] mb-2"
+          className="border-2 px-2 py-1 rounded-md w-[100%] mb-2 text-[#0003be]"
           type="text"
           placeholder="Project Name"
           value={projectName}
@@ -35,7 +35,7 @@ const CardForm: React.FC<CardFormProps> = ({ onAddCard, onClose }) => {
           required
         />
         <input
-          className="border-2 px-2 py-1 rounded-md w-[100%] mb-2"
+          className="border-2 px-2 py-1 rounded-md w-[100%] mb-2 text-[#0003be]"
           type="text"
           placeholder="Project Link"
           value={projectLink}
@@ -43,7 +43,7 @@ const CardForm: React.FC<CardFormProps> = ({ onAddCard, onClose }) => {
           required
         />
         <input
-          className="border-2 px-2 py-1 rounded-md w-[100%] mb-2"
+          className="border-2 px-2 py-1 rounded-md w-[100%] mb-2 text-[#0003be]"
           type="text"
           placeholder="Technologies"
           value={technologies}

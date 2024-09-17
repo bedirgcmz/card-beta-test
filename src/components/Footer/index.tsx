@@ -10,7 +10,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ navLinks, socialLinks }) => {
   return (
-    <footer className="flex flex-col gap-6 justify-center w-screen py-4 bg-[#669bbc] mt-auto">
+    <footer className="flex flex-col gap-6 justify-center w-screen py-4 bg-[#0009af] mt-auto">
       <div className="flex justify-evenly items-center">
         <ul className="flex justify-around items-center gap-5">
           {navLinks.map((link, index) => (

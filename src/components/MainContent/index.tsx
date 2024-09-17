@@ -2,18 +2,34 @@
 import { useState } from "react";
 import Card from "../Card";
 import CardForm from "../CardForm";
+import { IoMdAddCircle } from "react-icons/io";
 
 const MainContent = () => {
   const [cardsData, setCardsData] = useState<
     { id: number; projectName: string; projectLink: string; technologies: string }[]
   >([
-    { id: 1, projectName: "Project1", projectLink: "www.google.com", technologies: "Css, Html" },
-    { id: 2, projectName: "Project2", projectLink: "www.google.com", technologies: "React, JS" },
-    { id: 3, projectName: "Project3", projectLink: "www.google.com", technologies: "React, JS" },
+    {
+      id: 1,
+      projectName: "Project1",
+      projectLink: "http://www.google.com",
+      technologies: "Css, Html",
+    },
+    {
+      id: 2,
+      projectName: "Project2",
+      projectLink: "http://www.google.com",
+      technologies: "React, JS",
+    },
+    {
+      id: 3,
+      projectName: "Project3",
+      projectLink: "http://www.google.com",
+      technologies: "React, JS",
+    },
     {
       id: 4,
       projectName: "Project4",
-      projectLink: "www.google.com",
+      projectLink: "http://www.google.com",
       technologies: "Node, Express",
     },
   ]);
@@ -54,10 +70,10 @@ const MainContent = () => {
       </div>
       <button
         data-testid="add-card-button"
-        className="px-4 py-2 border-2 border-gray-800 bg-[#219ebc] rounded-lg"
+        className="px-4 py-2 border border-white bg-[#0004ff] rounded-lg flex items-center gap-2 hover:bg-white hover:text-[#0004ff]"
         onClick={() => setIsFormOpen(true)}
       >
-        Add Cards
+        Add Cards <IoMdAddCircle />
       </button>
       {isFormOpen && <CardForm onAddCard={onAddCard} onClose={onCloseForm} />}
     </div>

@@ -29,7 +29,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className="text-white  bg-[#023047] flex flex-col justify-start min-h-screen">
+      <body className="text-white   bg-[url('../../public/bg.webp')] bg-cover bg-center flex flex-col justify-start min-h-screen">
         <Header />
         {children}
         <Footer navLinks={footerDate.navLinks} socialLinks={footerDate.socialLinks} />
